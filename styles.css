@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.fingerprint {
+    width: 120px;
+    height: 200px;
+    background: radial-gradient(circle, #ddd 30%, #bbb 30%, #bbb 70%, #999 70%);
+    border-radius: 60px / 100px;
+    position: relative;
+    margin: 0 auto;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.fingerprint-gif {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0; /* Start with no fill */
+    background-image: url('https://www.mediaimpact.de/data/uploads/2022/07/gif_350x350.gif');
+    background-size: cover; /* Adjust to fill the area */
+    transition: height 0.5s;
+}
+
+.fingerprint-lines {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 200%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent 0%,
+        transparent 10%,
+        rgba(0, 0, 0, 0.2) 10%,
+        rgba(0, 0, 0, 0.2) 20%
+    );
+    transform: translateX(-50%);
+    opacity: 0.6;
+    pointer-events: none; /* Allows clicks to go through */
+}
+
+.status {
+    margin-top: 20px;
+    font-size: 18px;
+}
